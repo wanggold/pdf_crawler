@@ -61,16 +61,47 @@ python3 pdf_downloader.py --skip-download
 python3 pdf_downloader.py --skip-upload
 ```
 
+### 3. Metadata Creator (`create_metadata_files.py`)
+
+Creates metadata JSON files for PDF objects in an S3 bucket and uploads them back to S3. For each PDF in the bucket, it creates a metadata file with a CloudFront URL and uploads it to the same location.
+
+**Features:**
+- Automatically lists all PDF objects in the specified S3 bucket
+- Creates metadata files with CloudFront URLs
+- Uploads metadata files to the same S3 bucket
+- Multithreaded processing for faster execution
+- Configurable CloudFront domain
+- Detailed logging
+
+**Usage:**
+```bash
+python3 create_metadata_files.py [--bucket BUCKET] [--max-workers N] [--file-extension EXT]
+```
+
+**Example:**
+```bash
+# Run with default settings
+python3 create_metadata_files.py
+
+# Run with custom settings
+python3 create_metadata_files.py --bucket "my-custom-bucket" --max-workers 20
+
+# Process files with a different extension
+python3 create_metadata_files.py --file-extension ".docx"
+```
+
 ## File Structure
 
 - `pdf_crawler.py`: The web crawler script
 - `pdf_downloader.py`: The PDF downloader and S3 uploader script
+- `create_metadata_files.py`: The metadata creator script
 - `pdf_crawler_runs.md`: Documentation of crawler runs and analysis
 - `pdf_links/`: Directory containing PDF links
   - `pdf_links_1.txt`: Results from the first crawler run
   - `pdf_links_2.txt`: Results from the second crawler run
   - `combined_links.txt`: Combined unique links from both runs
 - `temp_pdfs/`: Temporary directory for downloaded PDFs
+- `temp_metadata/`: Temporary directory for metadata files
 
 ## Requirements
 
