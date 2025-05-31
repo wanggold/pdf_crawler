@@ -63,7 +63,7 @@ python3 pdf_downloader.py --skip-upload
 
 ### 3. Metadata Creator (`create_metadata_files.py`)
 
-Creates metadata JSON files for PDF objects in an S3 bucket and uploads them back to S3. For each PDF in the bucket, it creates a metadata file with a CloudFront URL and uploads it to the same location.
+Creates metadata JSON files for PDF objects in an S3 bucket and uploads them back to S3. For each PDF in the bucket, it creates a metadata file with a CloudFront URL and uploads it to the same location. This follows the [Amazon Q Business source attribution URL pattern](https://community.aws/content/2jHkgsngSxBhkzFPQwuEMgl3Nkw/setting-up-source-attribution-urls-when-using-amazon-s3-as-a-connector-for-amazon-q-business-applications?lang=en).
 
 **Features:**
 - Automatically lists all PDF objects in the specified S3 bucket
