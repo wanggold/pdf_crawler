@@ -6,7 +6,7 @@ For each PDF object in the bucket (e.g., 's3://building-dept-pdf-771454898274/90
 this script creates a metadata file (e.g., '90806-STPA-1000.pdf.metadata.json') with the following content:
 {
     "Attributes":{
-        "_source_url": "https://d30w66uabaix6n.cloudfront.net/90806-STPA-1000.pdf"
+        "_source_uri": "https://d30w66uabaix6n.cloudfront.net/90806-STPA-1000.pdf"
     }
 }
 
@@ -63,7 +63,7 @@ def create_metadata_file(s3_object_key, temp_dir):
     # Create metadata content
     metadata_content = {
         "Attributes": {
-            "_source_url": f"{CLOUDFRONT_DOMAIN}{filename}"
+            "_source_uri": f"{CLOUDFRONT_DOMAIN}{filename}"
         }
     }
     
