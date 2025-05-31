@@ -1,6 +1,6 @@
-# Building Department PDF Crawler and Uploader
+# Amazon Q Business: Building Department PDF Crawler and Uploader
 
-This project contains scripts to crawl the Building Department website for PDF links, download the PDFs, and upload them to an S3 bucket.
+This project contains scripts to crawl the Building Department website for PDF links, download the PDFs, and upload them to an S3 bucket. The PDFs are used to create knowledge base for Amazon Q Business. 
 
 ## Scripts
 
